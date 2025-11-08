@@ -121,6 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5592686714524965399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 100539f855aea428d92048199fb32b66, type: 3}
+  m_Script: {fileID: 11500000, guid: 785bb8230fff2a64bb1c708593a1214d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy3

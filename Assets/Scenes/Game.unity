@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6405400452280573197, guid: b1eed6253aa069845b0edf3f90db799d, type: 3}
-  bigBulletPrefab: {fileID: 3031304762613668968, guid: 2375febed33624e60a4816dec4f67538, type: 3}
+  bigBulletPrefab: {fileID: 3031304762613668968, guid: 1ed2364073ec7d74080fb213fd776c55, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,8 +464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyOnePrefab: {fileID: 9207418728420716899, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
-  enemyTwoPrefab: {fileID: 5592686714524965399, guid: af1f774b6e1324d91bca0a690b1db982, type: 3}
-  enemyThreePrefab: {fileID: 5592686714524965399, guid: 09110a79d37c348bf9060966b2b88f04, type: 3}
+  enemyTwoPrefab: {fileID: 5592686714524965399, guid: bcb6c7b8ceec41a4a8c35c1f3cd39114, type: 3}
+  enemyThreePrefab: {fileID: 5592686714524965399, guid: f7418909f78d5dd4e89a7862c48cdf4c, type: 3}
 --- !u!4 &2142600587
 Transform:
   m_ObjectHideFlags: 0

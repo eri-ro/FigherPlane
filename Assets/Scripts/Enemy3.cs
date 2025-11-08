@@ -20,7 +20,7 @@ public class Enemy3 : MonoBehaviour
 	float newX = startX + Mathf.Sin(Time.time * 2f) * 3f;
   	transform.position = new Vector3(newX, transform.position.y, transform.position.z);   
 
-        if (transform.position.y < -6.5f)
+        if (transform.position.y < -5.5f)
         {
             Destroy(this.gameObject);
         }
