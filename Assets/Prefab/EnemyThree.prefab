@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3525849058566209313}
   - component: {fileID: 1231416874600376074}
   - component: {fileID: 5079616731607470488}
-  - component: {fileID: 5557702211667553620}
+  - component: {fileID: -2492906539122567548}
   m_Layer: 0
   m_Name: EnemyThree
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5557702211667553620
+--- !u!114 &-2492906539122567548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +121,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5592686714524965399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd84547b67972644bad78a9112411140, type: 3}
+  m_Script: {fileID: 11500000, guid: 100539f855aea428d92048199fb32b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy3

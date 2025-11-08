@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6405400452280573197, guid: b1eed6253aa069845b0edf3f90db799d, type: 3}
+  bigBulletPrefab: {fileID: 3031304762613668968, guid: 2375febed33624e60a4816dec4f67538, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -442,7 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2142600587}
-  - component: {fileID: 2142600588}
+  - component: {fileID: 2142600586}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -450,6 +451,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2142600586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142600585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62c54f11f389f2458ff7c03f3db9a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyOnePrefab: {fileID: 9207418728420716899, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
+  enemyTwoPrefab: {fileID: 5592686714524965399, guid: af1f774b6e1324d91bca0a690b1db982, type: 3}
+  enemyThreePrefab: {fileID: 5592686714524965399, guid: 09110a79d37c348bf9060966b2b88f04, type: 3}
 --- !u!4 &2142600587
 Transform:
   m_ObjectHideFlags: 0
@@ -465,21 +481,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2142600588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142600585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62c54f11f389f2458ff7c03f3db9a18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  enemyOnePrefab: {fileID: 9207418728420716899, guid: 57d7aa5182902e24cb707961f14f52d5, type: 3}
-  enemyTwoPrefab: {fileID: 5592686714524965399, guid: 8c137955615144c4a82601f4ad3f5d4f, type: 3}
-  enemyThreePrefab: {fileID: 5592686714524965399, guid: f4a2c0e7a10e68a4083a5eddfd14f8ee, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
