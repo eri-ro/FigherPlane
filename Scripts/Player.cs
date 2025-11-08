@@ -18,8 +18,7 @@ public class Player : MonoBehaviour
     private float verticalScreenLimit = 6.5f;
 
     public GameObject bulletPrefab;
-
-    public GameObject BigBulletPrefab;
+    public GameObject bigBulletPrefab;
 
     void Start()
     {
@@ -47,7 +46,7 @@ public class Player : MonoBehaviour
         //if player presses E key, create a Big Bullet
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Instantiate(BigBulletPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+            Instantiate(bigBulletPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
         }
     }
 
@@ -58,13 +57,20 @@ public class Player : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         //Move the player
         transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * Time.deltaTime * playerSpeed);
-        //Player leaves the screen horizontally
-        if(transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
+
+        //Player limited to bottom half of the screen
+        if (transform.position.x > 0
         {
-            transform.position = new Vector3(transform.position.x * -1, transform.position.y, 0);
+            transform.position = new Vector3(0, transform.position.y, 0);
         }
+
+        if (transform.position.x < -horizontalScreenLimit)
+        {
+            transform.position = new Vector3(-horizontalScreenLimit, transform.position.y, 0);
+        }
+        
         //Player leaves the screen vertically
-        if(transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
+        if(transform.position.y > verticalScreenLimit || transform.position.y < -verticalScreenLimit)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
         }
