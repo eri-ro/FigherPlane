@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Enemy3 : MonoBehaviour
 {
+    public GameObject explosionPrefab;
+     private GameManager gameManager;
     private float startX;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         startX = transform.position.x;
     }
 
@@ -22,6 +25,21 @@ public class Enemy3 : MonoBehaviour
 
         if (transform.position.y < -6.5f)
         {
+            Destroy(this.gameObject);
+        }
+    }
+        private void OnTriggerEnter2D(Collider2D whatDidIHit)
+    {
+        if(whatDidIHit.tag == "Player")
+        {
+            whatDidIHit.GetComponent<PlayerController>().LoseALife();
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        } else if(whatDidIHit.tag == "Weapons")
+        {
+            Destroy(whatDidIHit.gameObject);
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            gameManager.AddScore(10);
             Destroy(this.gameObject);
         }
     }
