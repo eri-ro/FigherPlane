@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
-        if(whatDidIHit.tag == "Powerup")
+        if (whatDidIHit.tag == "Powerup")
         {
             Destroy(whatDidIHit.gameObject);
             int whichPowerup = Random.Range(1, 5);
@@ -103,6 +103,15 @@ public class PlayerController : MonoBehaviour
                     //If not: activate the shield's visibility
                     gameManager.ManagePowerupText(4);
                     break;
+            }
+        }
+        if (whatDidIHit.tag == "Health")
+        {
+            Destroy(whatDidIHit.gameObject);
+            if (lives < 3)
+            {
+                lives++;
+                gameManager.ChangeLivesText(lives);
             }
         }
     }

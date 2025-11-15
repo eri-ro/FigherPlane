@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverText;
     public GameObject restartText;
     public GameObject powerupPrefab;
+    public GameObject healthPrefab;
     public GameObject audioPlayer;
 
     public AudioClip powerupSound;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("CreateEnemyTwo", 3, 8);
         InvokeRepeating("CreateEnemyThree", 5, 10);
         StartCoroutine(SpawnPowerup());
+        StartCoroutine(SpawnHealth());
         powerupText.text = "No powerups yet!";
     }
 
@@ -77,6 +79,10 @@ public class GameManager : MonoBehaviour
     void CreatePowerup()
     {
         Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, verticalScreenSize * 0.8f), 0), Quaternion.identity);
+    }
+    void CreateHealth()
+    {
+        Instantiate(healthPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, verticalScreenSize * 0.8f), 0), Quaternion.identity);
     }
 
     void CreateSky()
@@ -110,12 +116,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnPowerup()
+        IEnumerator SpawnPowerup()
     {
         float spawnTime = Random.Range(3, 5); 
         yield return new WaitForSeconds(spawnTime);
         CreatePowerup();
         StartCoroutine(SpawnPowerup());
+    }
+
+        IEnumerator SpawnHealth()
+    {
+        float spawnTime = Random.Range(3, 5);
+        yield return new WaitForSeconds(spawnTime);
+        CreateHealth();
+        StartCoroutine(SpawnHealth());
     }
 
     public void PlaySound(int whichSound)
