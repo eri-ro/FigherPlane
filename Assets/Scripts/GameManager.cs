@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     public AudioClip powerupSound;
     public AudioClip powerdownSound;
+    public AudioClip coinSound;
+    public AudioClip gainlifeSound;
 
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI scoreText;
@@ -69,7 +71,6 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(enemyOnePrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize) * 0.9f, verticalScreenSize, 0), Quaternion.Euler(180, 0, 0));
     }
-
     void CreateEnemyTwo()
     {
        Instantiate(enemyTwoPrefab, new Vector3(Random.Range(-8f, 8f), 6.5f, 0), Quaternion.identity);
@@ -127,8 +128,6 @@ public class GameManager : MonoBehaviour
         CreatePowerup();
         StartCoroutine(SpawnPowerup());
     }
-
-
         IEnumerator SpawnCoin()
     {
         float spawnTime = Random.Range(4, 6); 
@@ -153,6 +152,12 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 audioPlayer.GetComponent<AudioSource>().PlayOneShot(powerdownSound);
+                break;
+            case 3:
+                audioPlayer.GetComponent<AudioSource>().PlayOneShot(coinSound);
+                break;
+            case 4:
+                audioPlayer.GetComponent<AudioSource>().PlayOneShot(gainlifeSound);
                 break;
         }
     }

@@ -12,7 +12,7 @@ public class BigBullet : MonoBehaviour
     void Update()
     {
         //make bullet move up
-        transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 6f);
+        transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 4f);
         if (transform.position.y > 5.5f)
         {
             Destroy(this.gameObject);

@@ -105,12 +105,14 @@ public class PlayerController : MonoBehaviour
             {
                 lives++;
                 gameManager.ChangeLivesText(lives);
+                gameManager.PlaySound(4);
             }
         }
          if(whatDidIHit.tag == "Coin")
         {
             Destroy(whatDidIHit.gameObject);
             gameManager.AddScore(1);
+            gameManager.PlaySound(3);
         }
     }
 

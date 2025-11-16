@@ -18,7 +18,7 @@ public class Enemy3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 0.5f);
+        transform.Translate(new Vector3(0, -4, 0) * Time.deltaTime * 0.5f);
 
 	float newX = startX + Mathf.Sin(Time.time * 2f) * 3f;
   	transform.position = new Vector3(newX, transform.position.y, transform.position.z);   
