@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Weapons
+  - Powerup
+<<<<<<< Updated upstream
+  - Health
+=======
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
