@@ -107,6 +107,11 @@ public class PlayerController : MonoBehaviour
                 gameManager.ChangeLivesText(lives);
                 gameManager.PlaySound(4);
             }
+            else
+            {
+                gameManager.AddScore(1);
+                gameManager.PlaySound(3);
+            }
         }
          if(whatDidIHit.tag == "Coin")
         {
