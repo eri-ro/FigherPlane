@@ -29,20 +29,14 @@ public class PlayerController : MonoBehaviour
         weaponType = 1;
         gameManager.ChangeLivesText(lives);
     }
-
     // Update is called once per frame
     void Update()
     {
         Movement();
         Shooting();
     }
-
     public void LoseALife()
     {
-        //Do I have a shield? If yes: do not lose a life, but instead deactivate the shield's visibility
-        //If not: lose a life
-        //lives = lives - 1;
-        //lives -= 1;
         lives--;
         gameManager.ChangeLivesText(lives);
         if (lives == 0)
@@ -52,7 +46,6 @@ public class PlayerController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
     IEnumerator SpeedPowerDown()
     {
         yield return new WaitForSeconds(3f);
@@ -114,14 +107,11 @@ public class PlayerController : MonoBehaviour
                 gameManager.ChangeLivesText(lives);
             }
         }
-<<<<<<< Updated upstream
-=======
          if(whatDidIHit.tag == "Coin")
         {
             Destroy(whatDidIHit.gameObject);
             gameManager.AddScore(1);
         }
->>>>>>> Stashed changes
     }
 
     void Shooting()
@@ -150,7 +140,6 @@ public class PlayerController : MonoBehaviour
             Instantiate(bigBulletPrefab, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
         }
     }
-
     void Movement()
     {
         horizontalInput = Input.GetAxis("Horizontal");
