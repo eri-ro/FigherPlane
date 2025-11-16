@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverText;
     public GameObject restartText;
     public GameObject powerupPrefab;
+<<<<<<< Updated upstream
+=======
+    public GameObject coinPrefab;
+>>>>>>> Stashed changes
     public GameObject healthPrefab;
     public GameObject audioPlayer;
 
@@ -51,6 +55,10 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("CreateEnemyThree", 5, 10);
         StartCoroutine(SpawnPowerup());
         StartCoroutine(SpawnHealth());
+<<<<<<< Updated upstream
+=======
+        StartCoroutine(SpawnCoin());
+>>>>>>> Stashed changes
         powerupText.text = "No powerups yet!";
     }
 
@@ -78,20 +86,30 @@ public class GameManager : MonoBehaviour
     }
     void CreatePowerup()
     {
-        Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, verticalScreenSize * 0.8f), 0), Quaternion.identity);
+        Instantiate(powerupPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, 0f), 0), Quaternion.identity);
     }
+    void CreateCoin()
+    {
+        Instantiate(coinPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, verticalScreenSize * 0.8f), 0), Quaternion.identity);
+    }
+    void CreateHealth()
+    {
+        Instantiate(healthPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, 0f), 0), Quaternion.identity);
+    }
+<<<<<<< Updated upstream
     void CreateHealth()
     {
         Instantiate(healthPrefab, new Vector3(Random.Range(-horizontalScreenSize * 0.8f, horizontalScreenSize * 0.8f), Random.Range(-verticalScreenSize * 0.8f, verticalScreenSize * 0.8f), 0), Quaternion.identity);
     }
 
+=======
+>>>>>>> Stashed changes
     void CreateSky()
     {
         for (int i = 0; i < 30; i++)
         {
             Instantiate(cloudPrefab, new Vector3(Random.Range(-horizontalScreenSize, horizontalScreenSize), Random.Range(-verticalScreenSize, verticalScreenSize), 0), Quaternion.identity);
         }
-        
     }
 
     public void ManagePowerupText(int powerupType)
@@ -124,6 +142,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnPowerup());
     }
 
+<<<<<<< Updated upstream
+=======
+        IEnumerator SpawnCoin()
+    {
+        float spawnTime = Random.Range(4, 6); 
+        yield return new WaitForSeconds(spawnTime);
+        CreateCoin();
+        StartCoroutine(SpawnCoin());
+    }
+>>>>>>> Stashed changes
         IEnumerator SpawnHealth()
     {
         float spawnTime = Random.Range(3, 5);

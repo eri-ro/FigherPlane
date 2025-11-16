@@ -114,6 +114,14 @@ public class PlayerController : MonoBehaviour
                 gameManager.ChangeLivesText(lives);
             }
         }
+<<<<<<< Updated upstream
+=======
+         if(whatDidIHit.tag == "Coin")
+        {
+            Destroy(whatDidIHit.gameObject);
+            gameManager.AddScore(1);
+        }
+>>>>>>> Stashed changes
     }
 
     void Shooting()
