@@ -63,6 +63,14 @@ public class PlayerController : MonoBehaviour
         gameManager.PlaySound(2);
     }
 
+    IEnumerator ShieldPowerDown()
+    {
+        yield return new WaitForSeconds(3f);
+        shieldPrefab.SetActive(false);
+        gameManager.ManagePowerupText(0);
+        gameManager.PlaySound(2);
+
+    }
     private void OnTriggerEnter2D(Collider2D whatDidIHit)
     {
         if (whatDidIHit.tag == "Powerup")
@@ -90,10 +98,20 @@ public class PlayerController : MonoBehaviour
                     gameManager.ManagePowerupText(3);
                     break;
                 case 4:
-                    //Picked up shield
-                    //Do I already have a shield?
+                   if (shieldPrefab) //Picked up shield
+                 shieldPrefab.SetActive(true); 
+                StartCoroutine(ShieldPowerDown());
+                if (whatDidIHit.tag == "Enemy")
+                {
+                    this.shieldPrefab.gameObject.SetActive(false);
+                    Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                    Destroy(this.gameObject);
+                }
+
+        {
+            } //Do I already have a shield?
                     //If yes: do nothing
-                    //If not: activate the shield's visibility
+             //If not: activate the shield's visibility
                     gameManager.ManagePowerupText(4);
                     break;
             }
